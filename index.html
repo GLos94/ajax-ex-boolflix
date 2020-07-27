@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Boolflix</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+    <script>
+        moment().format();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="css/master.css">
+
+    <script id="movie-template" type="text/x-handlebars-template">
+      <div class="movie">
+            <h2>{{title}}</h2>
+            <h3>{{original_title}}</h3>
+            <span class="language">{{original_language}}</span>
+            <span class="vote">{{vote_average}}</span>
+        </div>
+    </script>
+
+  </head>
+  <header>
+    <input id="search" type="text" name="" value="" placeholder="Cerca">
+    <button id="push" type="button" name="button">Cerca film o serie tv</button>
+  </header>
+  <body>
+
+    <div class="movies-container">
+      <div class="movie">
+
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>
