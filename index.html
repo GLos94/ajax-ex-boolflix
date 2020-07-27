@@ -14,17 +14,23 @@
 
     <script id="movie-template" type="text/x-handlebars-template">
       <div class="movie">
-            <h2>{{title}}</h2>
-            <h3>{{original_title}}</h3>
-            <span class="language">{{original_language}}</span>
-            <span class="vote">{{vote_average}}</span>
+            <h3>Titolo: {{it-title}}</h3>
+            <h3>Titolo originale: {{original_title}}</h3>
+            <div class="language">Lingua originale: {{original_language}}</div>
+            <div class="vote">Voto: {{vote_average}}</div>
         </div>
     </script>
 
   </head>
   <header>
-    <input id="search" type="text" name="" value="" placeholder="Cerca">
-    <button id="push" type="button" name="button">Cerca film o serie tv</button>
+
+      <img id="logo" src="img/BoolFlix2.png" alt="logo">
+
+    <div class="ricerca">
+      <input id="search" type="text" name="" value="" placeholder="Cerca film o serie tv">
+      <button id="push" type="button" name="button">Avvia</button>
+    </div>
+
   </header>
   <body>
 

@@ -4,6 +4,40 @@
   box-sizing: border-box;
 }
 
+header{
+  background-color: black;
+  padding: 2% 2%;
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo{
+  width: 15%;
+  height: auto;
+}
+
 body{
   background-color: purple;
+}
+
+
+.movie{
+  padding: 2% 2%;
+  color: white;
+}
+
+.ricerca{
+  width: 25%
+}
+
+#push{
+  padding: 1% 2%;
+  border-radius: 15px;
+}
+
+#search{
+  padding: 1% 1%;
+  border-radius: 15px;
 }
