@@ -28,8 +28,18 @@ body{
   color: white;
 }
 
+.serie{
+  padding: 2% 2%;
+  color: white;
+}
+
 .ricerca{
   width: 25%
+}
+
+
+i{
+  color: yellow;
 }
 
 #push{
