@@ -55,7 +55,8 @@ function searchMovies() {
         var lang = movie['original_language'];
         movie.flag = getFlag(lang);
 
-        movie.poster_path = poster + movie['poster_path']
+
+        movie.poster_path = poster + movie['poster_path'];
 
 
         var movieHTML = compiled(movie);
@@ -165,20 +166,6 @@ function getFlag(lang) {
 }
 
 
-// MILESTONE 3 -
-// function getPoster(poster) {
-//
-//   var dim = "w185";
-//
-//
-//   if (url === null){
-//     var poster = "img/w185.jpg";
-//     return poster;
-//   }else{
-//     var poster = "https://image.tmdb.org/t/p/" + dim;
-//     return poster;
-//     }
-// }
 
 
 // GENERAL FUNCTIONS
