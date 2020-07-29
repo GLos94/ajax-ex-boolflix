@@ -37,6 +37,10 @@ body{
   width: 25%
 }
 
+.flag{
+  width: 3%;
+  height: auto;
+}
 
 i{
   color: yellow;

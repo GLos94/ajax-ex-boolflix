@@ -41,6 +41,8 @@ function searchMovies() {
       var compiled = Handlebars.compile(template);
       var target = $('.movie');
       target.text('');
+      var poster = 'https://image.tmdb.org/t/p/w185';
+
 
       for (var i = 0; i < movies.length; i++) {
 
@@ -52,6 +54,9 @@ function searchMovies() {
 
         var lang = movie['original_language'];
         movie.flag = getFlag(lang);
+
+        movie.poster_path = poster + movie['poster_path']
+
 
         var movieHTML = compiled(movie);
         target.append(movieHTML);
@@ -98,6 +103,7 @@ function searchSeries() {
         var compiled = Handlebars.compile(template);
         var target = $('.serie');
         target.text('');
+        var poster = 'https://image.tmdb.org/t/p/w185';
 
         for (var i = 0; i < series.length; i++) {
 
@@ -108,6 +114,9 @@ function searchSeries() {
 
           var lang = serie['original_language'];
           serie.flag = getFlag(lang);
+
+          serie.poster_path = poster + serie['poster_path']
+
 
           var serieHTML = compiled(serie);
           target.append(serieHTML);
@@ -156,10 +165,27 @@ function getFlag(lang) {
 }
 
 
+// MILESTONE 3 -
+// function getPoster(poster) {
+//
+//   var dim = "w185";
+//
+//
+//   if (url === null){
+//     var poster = "img/w185.jpg";
+//     return poster;
+//   }else{
+//     var poster = "https://image.tmdb.org/t/p/" + dim;
+//     return poster;
+//     }
+// }
+
+
 // GENERAL FUNCTIONS
 function init() {
   inputRequest();
-  
+
+
 }
 
 $(document).ready (init);
