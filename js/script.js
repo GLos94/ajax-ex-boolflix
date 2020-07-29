@@ -44,13 +44,6 @@ function searchMovies() {
 
       for (var i = 0; i < movies.length; i++) {
 
-        // var targetHTML = compiled({
-        //   "it-title": results[i].title,
-        //   "original_title": results[i].original_title,
-        //   "original_language": results[i].original_language,
-        //   "vote_average": results[i].vote_average
-        // })
-        // target.append(targetHTML);
 
         var movie = movies[i];
 
@@ -166,8 +159,7 @@ function getFlag(lang) {
 // GENERAL FUNCTIONS
 function init() {
   inputRequest();
-  // getStars();
-  // getFlag();
+  
 }
 
 $(document).ready (init);
