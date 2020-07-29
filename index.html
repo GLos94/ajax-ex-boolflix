@@ -14,43 +14,33 @@
 
     <script id="movie-template" type="text/x-handlebars-template">
       <div class="movie">
-            <h3>Titolo: {{it-title}}</h3>
+            <h3>Titolo: {{title}}</h3>
             <h3>Titolo originale: {{original_title}}</h3>
             <div class="language">Lingua originale: {{original_language}}</div>
-            <div class="vote">Voto: {{vote_average}}
-            {{star1}}
-            {{star2}}
-            {{star3}}
-            {{star4}}
-            {{star5}}
-            </div>
-            <!-- <i class="fas fa-star"></i>
-            <i class="far fa-star"></i> -->
+            <div class="vote">Voto: {{vote_average}}</div>
+            <div>{{{stars}}}</div>
+            <div>{{{flag}}}</div>
+
         </div>
     </script>
 
     <script id="serie-template" type="text/x-handlebars-template">
       <div class="serie">
-            <h3>Titolo: {{it-name}}</h3>
+            <h3>Titolo: {{name}}</h3>
             <h3>Titolo originale: {{original_name}}</h3>
             <div class="language">Lingua originale: {{original_language}}</div>
             <div class="vote">Voto: {{vote_average}}</div>
-            <div class="switch"> data-vote={{"vote_average"}} data-language={{original_language}}</div>
+            <div>{{{stars}}}</div>
+            <img class="flag">{{{flag}}}</img>
+            <img class="poster" src="">{{poster_path}}</img>
+
 
 
 
         </div>
     </script>
 
-    <script id="stars-template" type="text/x-handlebars-template">
-      <h3>Voto:
-         <i class='{{star1}}'></i>
-         <i class='{{star2}}'></i>
-         <i class='{{star3}}'></i>
-         <i class='{{star4}}'></i>
-         <i class='{{star5}}'></i>
-      </h3>
-    </script>
+
 
   </head>
   <header>
