@@ -13,10 +13,8 @@
     <link rel="stylesheet" href="css/master.css">
 
     <script id="movie-template" type="text/x-handlebars-template">
-        {{#if poster_path}}
-        <div class='movie' style = "background-image: url('https://image.tmdb.org/t/p/w342/{{poster_path}}'); background-repeat: no-repeat;">
-        {{/if}}
-          <div class='movie-info'>
+
+          <div class="movie-info">
             <li>
                Titolo: {{title}} <br>
                Titolo originale: {{original_title}} <br>
@@ -25,26 +23,35 @@
                {{{stars}}} <br>
                Lingua: {{{flag}}} <br>
                Trama: {{overview}}
+
             </li>
-          </div>
+            {{#if poster_path}}
+             <img class="poster" src='https://image.tmdb.org/t/p/w342/{{poster_path}}'>
+            {{/if}}
         </div>
+
       </script>
+
+
       <script id="serie-template" type="text/x-handlebars-template">
-        {{#if poster_path}}
-        <div class='serie' style = "background-image: url('https://image.tmdb.org/t/p/w342/{{poster_path}}'); background-repeat: no-repeat;)">
-        {{/if}}
-          <div class='serie-info'>
+
+        <div class="serie-info">
+
             <li>
-              Titolo: {{title}} <br>
-              Titolo originale: {{original_title}} <br>
+              Titolo: {{name}} <br>
+              Titolo originale: {{original_name}} <br>
               Lingua originale: {{original_language}} <br>
               Voto: {{vote_average}} <br>
               {{{stars}}} <br>
               Lingua: {{{flag}}} <br>
               Trama: {{overview}}
+              {{#if poster_path}}
+              <img class="poster" src='https://image.tmdb.org/t/p/w342/{{poster_path}}'>
+              {{/if}}
             </li>
-          </div>
+
         </div>
+
       </script>
 
 
@@ -69,9 +76,9 @@
     </div>
 
     <div class="series-container">
-    <ul class="results">
+      <ul class="results">
 
-    </ul>
+      </ul>
 
     </div>
 

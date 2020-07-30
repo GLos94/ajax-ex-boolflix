@@ -24,7 +24,6 @@ body{
 
 
 .movie{
-  
   display: inline-block;
   padding: 2% 2%;
   margin: 2% 2%;
@@ -40,12 +39,57 @@ body{
   color: white;
 }
 
-li{
-  list-style: none;
+.results{
+  margin: 0 3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/*
+.serie-info{
+  position: relative;
+  width: 100%;
+}
+
+.movie-info{
+  position: relative;
+  width: 100%;
+} */
+
+.poster{
+  position: absolute;
+  padding: 0 2%;
+  margin: 0 3%;
+  top:0;
+  left: 0;
+  opacity:1;
+  transition: all .3s;
+  box-shadow: -1px 1px 5px 0px #000000;
 }
 
 .poster:hover{
   opacity: 0
+}
+
+.serie-info, .movie-info{
+  width: 30%;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 4%;
+
+}
+
+li{
+  height: 513px;
+
+  list-style: none;
+  padding: 5% 5%;
+  margin: 2% 2%;
+
+  color: white;
+  background-color: black;
+
+
 }
 
 
@@ -55,7 +99,7 @@ li{
 
 .flag{
   width: 5%;
-  height: auto;
+
 }
 
 i{

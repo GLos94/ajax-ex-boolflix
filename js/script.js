@@ -39,7 +39,7 @@ function searchMovies() {
   // parte di Handlebars
       var template = $('#movie-template').html();
       var compiled = Handlebars.compile(template);
-      var target = $('movies-container > .results');
+      var target = $('.movies-container > .results');
       target.text('');
       // var poster = 'https://image.tmdb.org/t/p/w185';
 
