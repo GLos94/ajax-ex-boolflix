@@ -10,7 +10,7 @@ function inputRequest(){
   });
 
 
-}
+};
 
 // prendi il valore dell'input e cerca film
 function searchMovies() {
@@ -36,12 +36,12 @@ function searchMovies() {
 
       var movies = data['results'];
 
-// parte di Handlebars
+  // parte di Handlebars
       var template = $('#movie-template').html();
       var compiled = Handlebars.compile(template);
-      var target = $('.movie');
+      var target = $('movies-container > .results');
       target.text('');
-      var poster = 'https://image.tmdb.org/t/p/w185';
+      // var poster = 'https://image.tmdb.org/t/p/w185';
 
 
       for (var i = 0; i < movies.length; i++) {
@@ -56,7 +56,7 @@ function searchMovies() {
         movie.flag = getFlag(lang);
 
 
-        movie.poster_path = poster + movie['poster_path'];
+        // movie.poster_path = poster + movie['poster_path'];
 
 
         var movieHTML = compiled(movie);
@@ -102,9 +102,9 @@ function searchSeries() {
   // parte di Handlebars
         var template = $('#serie-template').html();
         var compiled = Handlebars.compile(template);
-        var target = $('.serie');
+        var target = $('.series-container > .results');
         target.text('');
-        var poster = 'https://image.tmdb.org/t/p/w185';
+        // var poster = 'https://image.tmdb.org/t/p/w185';
 
         for (var i = 0; i < series.length; i++) {
 
@@ -116,7 +116,7 @@ function searchSeries() {
           var lang = serie['original_language'];
           serie.flag = getFlag(lang);
 
-          serie.poster_path = poster + serie['poster_path']
+          // serie.poster_path = poster + serie['poster_path'];
 
 
           var serieHTML = compiled(serie);
@@ -149,7 +149,7 @@ function getStars(vote) {
    }
 
   return voteHTML;
-}
+};
 
 
 // sostituiamo lingua con bandiera
@@ -163,7 +163,8 @@ function getFlag(lang) {
 
     return lang;
 
-}
+};
+
 
 
 
@@ -172,7 +173,6 @@ function getFlag(lang) {
 function init() {
   inputRequest();
 
-
-}
+};
 
 $(document).ready (init);

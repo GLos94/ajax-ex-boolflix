@@ -13,33 +13,39 @@
     <link rel="stylesheet" href="css/master.css">
 
     <script id="movie-template" type="text/x-handlebars-template">
-      <div class="movie">
-            <h3>Titolo: {{title}}</h3>
-            <h3>Titolo originale: {{original_title}}</h3>
-            <div class="language">Lingua originale: {{original_language}}</div>
-            <img src="{{poster_path}}"></img>
-            <div>Voto: {{{stars}}}</div>
-            <div>{{{flag}}}</div>
-
+        {{#if poster_path}}
+        <div class='movie' style = "background-image: url('https://image.tmdb.org/t/p/w342/{{poster_path}}'); background-repeat: no-repeat;">
+        {{/if}}
+          <div class='movie-info'>
+            <li>
+               Titolo: {{title}} <br>
+               Titolo originale: {{original_title}} <br>
+               Lingua originale: {{original_language}} <br>
+               Voto: {{vote_average}} <br>
+               {{{stars}}} <br>
+               Lingua: {{{flag}}} <br>
+               Trama: {{overview}}
+            </li>
+          </div>
         </div>
-    </script>
-
-    <script id="serie-template" type="text/x-handlebars-template">
-      <div class="serie">
-            <h3>Titolo: {{name}}</h3>
-            <h3>Titolo originale: {{original_name}}</h3>
-            <div class="language">Lingua originale: {{original_language}}</div>
-            <img src="{{poster_path}}"></img>
-            <div>Voto: {{{stars}}}</div>
-            <img class="flag">{{{flag}}}</img>
-
-
-
-
-
+      </script>
+      <script id="serie-template" type="text/x-handlebars-template">
+        {{#if poster_path}}
+        <div class='serie' style = "background-image: url('https://image.tmdb.org/t/p/w342/{{poster_path}}'); background-repeat: no-repeat;)">
+        {{/if}}
+          <div class='serie-info'>
+            <li>
+              Titolo: {{title}} <br>
+              Titolo originale: {{original_title}} <br>
+              Lingua originale: {{original_language}} <br>
+              Voto: {{vote_average}} <br>
+              {{{stars}}} <br>
+              Lingua: {{{flag}}} <br>
+              Trama: {{overview}}
+            </li>
+          </div>
         </div>
-    </script>
-
+      </script>
 
 
   </head>
@@ -56,15 +62,17 @@
   <body>
 
     <div class="movies-container">
-      <div class="movie">
+      <ul class="results">
 
-      </div>
+      </ul>
+
     </div>
 
     <div class="series-container">
-      <div class="serie">
+    <ul class="results">
 
-      </div>
+    </ul>
+
     </div>
 
 
