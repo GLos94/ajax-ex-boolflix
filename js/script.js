@@ -1,24 +1,50 @@
 // mia API = https://api.themoviedb.org/3/movie/550?api_key=1c0bbb5e84e24add52bb6a4821be5a57
 
+
 // MILESTONE 1 - ricerca film
-// definisci il bottone
-function inputRequest(){
+
+function inputRequest() {
+//avvia ricerca con bottone
   var btn = $('#push');
-  btn.click(function () {
-    searchMovies();
-    searchSeries();
-  });
+  var target = $('#search');
+
+    btn.click(function(){
+
+      startSearch();
+
+    });
+
+// avvia ricerca con tasto enter
+    target.keyup(function() {
+
+      if ( event.which == 13 ) {
+
+        startSearch();
+
+      }
+
+    });
+
+};
+
+
+// generalizza funzione ricerca
+function startSearch() {
+  var target = $('#search');
+  var query = target.val();
+  target.val('');
+
+  var targetResult = $('.results');
+  targetResult.text('');
+
+  searchMovies(query);
+  searchSeries(query);
 
 
 };
 
-// prendi il valore dell'input e cerca film
-function searchMovies() {
-  var query = $("#search").val();
-
-
-  $('.movie').text('');
-
+// prende il valore dell'input e cerca film
+function searchMovies(query) {
 
   $.ajax({
 
@@ -41,7 +67,7 @@ function searchMovies() {
       var compiled = Handlebars.compile(template);
       var target = $('.movies-container > .results');
       target.text('');
-      // var poster = 'https://image.tmdb.org/t/p/w185';
+
 
 
       for (var i = 0; i < movies.length; i++) {
@@ -55,8 +81,6 @@ function searchMovies() {
         var lang = movie['original_language'];
         movie.flag = getFlag(lang);
 
-
-        // movie.poster_path = poster + movie['poster_path'];
 
 
         var movieHTML = compiled(movie);
@@ -75,12 +99,8 @@ function searchMovies() {
 
 
 
-// MILESTONE 2 - allarghiamo la ricerca alle serie tv
-function searchSeries() {
-  var query = $("#search").val();
-
-
-  $('.serie').text('');
+// MILESTONE 2 - allarga la ricerca alle serie tv
+function searchSeries(query) {
 
 
     $.ajax({
@@ -104,7 +124,7 @@ function searchSeries() {
         var compiled = Handlebars.compile(template);
         var target = $('.series-container > .results');
         target.text('');
-        // var poster = 'https://image.tmdb.org/t/p/w185';
+
 
         for (var i = 0; i < series.length; i++) {
 
@@ -116,7 +136,7 @@ function searchSeries() {
           var lang = serie['original_language'];
           serie.flag = getFlag(lang);
 
-          // serie.poster_path = poster + serie['poster_path'];
+
 
 
           var serieHTML = compiled(serie);
@@ -132,7 +152,7 @@ function searchSeries() {
   });
 };
 
-// sostituiamo votazione numerica con votazione stelle
+// sostituisce votazione numerica con votazione stelle
 function getStars(vote) {
 
   vote = Math.ceil(vote / 2)
@@ -152,7 +172,7 @@ function getStars(vote) {
 };
 
 
-// sostituiamo lingua con bandiera
+// sostituisce lingua con bandiera nazione
 function getFlag(lang) {
 
   if (lang === 'it' || lang === 'en' ) {
