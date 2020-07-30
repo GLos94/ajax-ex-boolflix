@@ -23,21 +23,13 @@ body{
 }
 
 
-.movie{
-  display: inline-block;
-  padding: 2% 2%;
-  margin: 2% 2%;
-  color: white;
-
-
-}
-
-.serie{
+.movie, .serie{
   display: inline-block;
   padding: 2% 2%;
   margin: 2% 2%;
   color: white;
 }
+
 
 .results{
   margin: 0 3%;
@@ -45,16 +37,6 @@ body{
   flex-wrap: wrap;
   justify-content: center;
 }
-/*
-.serie-info{
-  position: relative;
-  width: 100%;
-}
-
-.movie-info{
-  position: relative;
-  width: 100%;
-} */
 
 .poster{
   position: absolute;
@@ -76,31 +58,26 @@ body{
   display: inline-block;
   position: relative;
   padding-bottom: 4%;
-
 }
 
 li{
   height: 513px;
-
   list-style: none;
   padding: 5% 5%;
   margin: 2% 2%;
-
   color: white;
   background-color: black;
-
-
 }
-
 
 .ricerca{
   width: 25%;
 }
 
+
 .flag{
   width: 5%;
-
 }
+
 
 i{
   color: yellow;
@@ -109,9 +86,11 @@ i{
 #push{
   padding: 1% 2%;
   border-radius: 15px;
+  border-style: hidden;
 }
 
 #search{
   padding: 1% 1%;
   border-radius: 15px;
+  border-style: hidden;
 }
