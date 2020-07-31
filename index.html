@@ -10,47 +10,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Recursive&family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/master.css">
 
     <script id="movie-template" type="text/x-handlebars-template">
 
           <div class="movie-info">
             <li>
-               Titolo: {{title}} <br>
-               Titolo originale: {{original_title}} <br>
-               Lingua originale: {{original_language}} <br>
-               Voto: {{vote_average}} <br>
+              <b>Titolo:</b> {{title}} <br>
+              <b>Titolo originale:</b> {{original_title}} <br>
+              <b>Lingua originale:</b> {{original_language}} <br>
+              <b>Voto:</b> {{vote_average}} <br>
                {{{stars}}} <br>
-               Lingua: {{{flag}}} <br>
-               Trama: {{overview}}
-
+              <b>Lingua:</b> {{{flag}}} <br>
+              <b>Overview:</b> {{overview}}
             </li>
             {{#if poster_path}}
              <img class="poster" src='https://image.tmdb.org/t/p/w342/{{poster_path}}'>
             {{/if}}
-        </div>
+          </div>
 
       </script>
 
 
       <script id="serie-template" type="text/x-handlebars-template">
 
-        <div class="serie-info">
-
+          <div class="serie-info">
             <li>
-              Titolo: {{name}} <br>
-              Titolo originale: {{original_name}} <br>
-              Lingua originale: {{original_language}} <br>
-              Voto: {{vote_average}} <br>
+              <b>Titolo:</b> {{name}} <br>
+              <b>Titolo originale:</b> {{original_name}} <br>
+              <b>Lingua originale:</b> {{original_language}} <br>
+              <b>Voto:</b> {{vote_average}} <br>
               {{{stars}}} <br>
-              Lingua: {{{flag}}} <br>
-              Trama: {{overview}}
-              {{#if poster_path}}
-              <img class="poster" src='https://image.tmdb.org/t/p/w342/{{poster_path}}'>
-              {{/if}}
+              <b>Lingua:</b> {{{flag}}} <br>
+              <b>Overview:</b> {{overview}}
             </li>
-
-        </div>
+            {{#if poster_path}}
+              <img class="poster" src='https://image.tmdb.org/t/p/w342/{{poster_path}}'>
+            {{/if}}
+          </div>
 
       </script>
 

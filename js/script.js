@@ -82,6 +82,11 @@ function searchMovies(query) {
         movie.flag = getFlag(lang);
 
 
+        if (movie.overview.length > 250) {
+
+          movie.overview = movie.overview.substring(0, 250) + '...';
+
+        }
 
         var movieHTML = compiled(movie);
         target.append(movieHTML);
@@ -137,7 +142,11 @@ function searchSeries(query) {
           serie.flag = getFlag(lang);
 
 
+          if (serie.overview.length > 250) {
 
+            serie.overview = serie.overview.substring(0, 250) + '...';
+
+          }
 
           var serieHTML = compiled(serie);
           target.append(serieHTML);
