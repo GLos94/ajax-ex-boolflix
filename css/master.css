@@ -44,7 +44,7 @@ body{
 .poster{
   position: absolute;
   padding: 0 2%;
-  margin: 0 3%;
+  margin: 0 16%;
   top:0;
   left: 0;
   opacity:1;
@@ -66,7 +66,7 @@ body{
 li{
   height: 513px;
   list-style: none;
-  padding: 5% 5%;
+  padding: 5% 29%;
   margin: 2% 2%;
   color: white;
   background-color: black;
